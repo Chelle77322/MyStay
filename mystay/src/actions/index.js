@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from 'axios'
 import AuthService from '../services/auth-service';
 import axiosService from '../services/axios-service';
 import {

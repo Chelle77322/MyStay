@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import axios from 'axios'
 import { Button, Form, FormGroup, Label, Input, Container } from 'reactstrap';
 export class FeedbackForm extends Component {
