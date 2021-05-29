@@ -1,47 +1,65 @@
-import React from 'react';
-import FormRegister from './formRegister';
-import * as actions from '../../actions';
-import {Redirect} from 'react-router-dom';
+import React, {Component} from 'react';
+import {Field, reduxForm} from 'redux-form';
+import {RMSInput} from '../shared/form/RMSInput';
 
-export class Register extends React.Component{
-    constructor () {
-        super();
-        this.state = {
-            errors:[],
-            redirect: false
-        }
-        this.registerUser = this.RegisterUser.bind(this);
-    }
-    RegisterUser(userData){
-        actions.Register(userData).then((_Registered) => {
-            this.setState({redirect:true});
-        }, (errors)=> {
-            this.setState({errors});
+
+export class Register extends Component {
+    state = {
+        booking_id: this.props.booking_id, 
+        full_name: this.props.full_name,
+        password: this.props.password,
+        passwordConfirmation: this.props.password
+        };
+    handleChange = event =>{
+        this.setState({
+            booking_id: event.target.value,
+            full_name: event.target.value,
+            password: event.target.value,
+            passwordConfirmation: event.target.value
         });
     }
-    render(){
-        const{errors, redirect} = this.state;
-        if(redirect){
-            return <Redirect to ={{pathname: '/login', state:{successRegistered: true}}}/>
+render(){
+    return (
+        <form onSubmit>
+        <Field
+        name = "booking_id"
+        type = "text"
+        label = 'Booking ID'
+        component = {RMSInput}
+        className = "form-control"
+        value = {this.state.booking_id}/>
+
+        <Field
+        name = "full_name"
+        type = "text"
+        label = 'Name'
+        className = 'form-control'
+        component = {RMSInput}
+        value = {this.state.full_name}/>
+
+        <Field
+        name="password"
+        type="password"
+        label='Password'
+        className="form-control"
+        component={RMSInput}
+        value = {this.state.password}/>
+                
+        <Field
+        name="passwordConfirmation"
+        type="password"
+        label='Confirm Password'
+        className="form-control"
+        component={RMSInput}
+        value = {this.state.passwordConfirmation}/>
             
-        }
-        return (
-            <section id = 'register'>
-                <div className = 'bwm-form'>
-                    <div className = 'row'>
-                        <div className = 'col-md-5'>
-                            <h1> Register</h1>
-                            <FormRegister submitcb = {this.registerUser} errors = {errors}/>
-                        </div>
-                        <div className = 'col-md-6 ml-auto'>
-                            <div className = 'image-container'>
-                                <h2 className = 'catchphrase'> Leave your feedback about your stay</h2>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        );
-    }
+        <button className = 'btn btn-bwm btn-form' type = 'submit'>Register as Guest</button>
+
+</form>
+    
+    )
 }
+}
+export default reduxForm ({
+    form: 'Register'
+})(Register);

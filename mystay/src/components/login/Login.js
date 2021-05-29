@@ -2,9 +2,7 @@ import React, {Component} from 'react';
 import { Field , reduxForm} from 'redux-form';
 import{RMSInput} from '../shared/form/RMSInput';
 
-
-
- export class Login extends Component{
+export class Login extends Component{
 state = {booking_id: this.props.booking_id, password: this.props.password};
 handleChange = event => {
     this.setState({booking_id: event.target.value, password: event.target.value});
