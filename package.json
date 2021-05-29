@@ -1,61 +1,70 @@
 {
-  "name": "mystay",
+  "name": "mystay-feedback-app",
   "version": "1.0.0",
   "description": "A MERN app that allows guests to give feedback about the accommodation and facilities",
-  "main": "server.js",
-  
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Chelle77322/MyStay.git"
+  "private": true,
+  "proxy": {
+    "api/*": {
+      "target": "http://localhost:3000"
+    }
   },
-  "author": "Michelle Hall",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Chelle77322/MyStay/issues"
-  },
-  "homepage": "https://github.com/Chelle77322/MyStay#readme",
   "dependencies": {
     "actions": "^1.3.0",
     "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
+    "bootstrap": "^5.0.1",
+    "camel-case": "^4.1.2",
+    "chokidar": "^3.5.1",
     "concurrently": "^6.2.0",
+    "cors": "^2.8.5",
     "create-react-app": "^4.0.3",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-mongoose-helper": "^1.0.11",
     "if-env": "^1.0.4",
+    "jquery": "^3.6.0",
     "jsonwebtoken": "^8.5.1",
+    "jsquery": "^1.1.1",
     "moment": "^2.29.1",
     "mongoose": "^5.12.12",
+    "node-gyp": "^7.1.2",
+    "node-sass": "^6.0.0",
+    "nodemon": "^2.0.7",
+    "npm-run-all": "^1.4.0",
     "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-redux": "^7.2.4",
     "react-responsive-modal": "^6.0.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^4.0.3",
+    "react-toastify": "^7.0.4",
+    "reactjs": "^1.0.0",
+    "reactstrap": "^8.9.0",
     "redux": "^4.1.0",
+    "redux-form": "^8.3.7",
     "redux-thunk": "^2.3.0",
+    "run-all": "^1.0.1",
     "server": "^1.0.33"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    
-      
     "start:prod": "node server.js",
-    
-      
-    "start:dev": "concurrently \"nodemon --ignore 'mystay/*'\" \"npm run ratemystay\"",
-    
-      
+    "start:dev": "concurrently \"nodemon --ignore 'mystay/*'\" \"npm run mystay\"",
     "mystay": "cd mystay && npm run start",
-    
-      
-    "build": "cd ratemystay && npm run build",
-    
-      
-    "install-mystay": "cd ratemystay && npm install",
-    
-      
+    "build": "cd mystay && npm run build",
+    "install-mystay": "cd src/mystay && npm install",
     "heroku-postbuild": "npm run install-mystay && npm run build"
-    
-    }
+  },
+  "main": "server/server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chelle77322/MyStay.git"
+  },
+  "keywords": [],
+  "author": "Michelle Hall",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Chelle77322/MyStay/issues"
+  },
+  "homepage": "https://github.com/Chelle77322/MyStay#readme"
 }

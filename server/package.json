@@ -2,11 +2,15 @@
   "name": "server",
   "version": "1.0.0",
   "description": "The server that runs the backend component of the MERN",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node server.js"
   },
   "author": "Michelle Hall",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "nodemon": "^2.0.7",
+    "redux-form": "^8.3.7"
+  }
 }

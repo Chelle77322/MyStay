@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const config = require('./config');
 const StartDb = require('./startdb');
 const path = require ('path');
+const cors = require('cors');
 require('dotenv');
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/RateMyStay";
 
@@ -23,6 +24,7 @@ mongoose.connect(MONGODB_URI , {
 const app = express();
 
 //Adding this to deal with any possible CORS issues that may happen
+app.use(cors());
 app.use((request, result, next) => {
     result.header("Access-Control-Allow-Origin", "*");
     result.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -40,6 +42,9 @@ app.use(express.json());
 app.use('/api/accommodation',accommodationRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/feedback', feedbackRoutes);
+console.log(userRoutes);
+console.log(feedbackRoutes);
+console.log(accommodationRoutes);
 
 if(process.env.NODE_ENV === "production"){
     const appPath = path.join(__dirname, '..',build);
@@ -47,6 +52,7 @@ if(process.env.NODE_ENV === "production"){
     app.get('*', function(request, result){
         result.sendFile(path.resolve(appPath, 'index.html'));
     });
+    console.log(appPath);
 }
 
 //App is connected and listening on
