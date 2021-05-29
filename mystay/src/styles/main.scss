@@ -1,0 +1,55 @@
+@import 'variables.scss';
+@import './header/header.scss';
+@import './accommodation/accommodation-listing.scss';
+@import './feedback/userfeedback.scss';
+
+
+$primary-color:#4d91c6;
+$secondary-color:#f6d155;
+$color-ss:#eaeade;
+$color-stan:#998099;
+$font-stack:    Limelight, sans-serif;
+$primary-color: #333;
+$imgpath :"/img/";
+
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+  background: url(#{$imgpath}/back.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+​
+
+
+.page-title {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.superiorstudio{
+    color: $color-ss
+}
+.standardstudio{
+   color: $color-stan;
+}
+//.ensuitesite{
+ //   background-color: adjust-color($color: #ea8800, $red: 1, $green: 2, $blue: 3, $hue: 0, $saturation: 0%, $lightness: 0%, $alpha: 1.0);
+//}
+//.unpoweredsite{
+   // background-color: adjust-color($color: #197744, $red: 1, $green: 2, $blue: 9, $hue: 0, $saturation: 0%, //$lightness: 20%, $alpha: 1.0);
+//}
+.btn-bwm{
+    background-color: $main-color;
+    border-color: $main-color;
+    color: white;
+    padding: 15px 30px;
+    font-size: 20px;
+
+    &:hover, &:focus, &:active{
+        border-color: $main-color !important;
+        background-color: $main-color !important;
+
+    }
+}

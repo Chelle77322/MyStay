@@ -1,0 +1,90 @@
+$bm-gradient: linear-gradient(rgb(228, 128, 35), rgb(14, 12, 138));
+$cool-grad: linear-gradient(rgb(114, 81, 190), rgb(204, 131, 20));
+ $meh-grad: linear-gradient(tomato, transparent);
+ $snarky-grad: linear-gradient(orange 75%, blue);
+
+@mixin blendy($img, $color: null, $grad: null, $blend: multiply) {
+  $img-path: url('../../img/#{$img}');
+  @if $grad {
+    background: $grad, $img-path;
+  } @else {
+    background-image: $img-path;
+    background-color: $color;
+  }
+  background-blend-mode: $blend;
+}
+
+.blend {
+  @include blendy("RateMyStay.png",$bm-gradient, $grad: $cool-grad);
+  width: 100vw;
+  height: 25vh;
+  border-radius: 50%;
+  background-size: cover;
+  margin: 1.5em auto;
+}
+
+
+.nav {
+  @include blendy("RateMyStay.png", $bm-gradient, multiply);
+  width: 100vw;
+  height: 20vh;
+  border-radius: 50%;
+  background-size: cover;
+  font-size: 1.04em;
+  padding: 10px 50px;
+}
+
+.navbar {
+    padding: 20px 80px;
+    height: 75%;
+    margin-bottom: 40px;
+    background-color: $main-black-color;
+  
+    .bwm-search {
+      height: 50px;
+      width: 300px !important;
+    }
+  
+    .navbar-brand {
+      color: $main-color !important;
+      font-weight: 500;
+      padding: 10px 50px;
+
+      .img{
+     
+        height: 25%;
+        margin-left: 0px;
+      }
+    }
+  
+    .nav-item {
+      font-size: 14px;
+    }
+  
+    .btn-bwm-search {
+      border-color: $main-color;
+      color: $main-color;
+  
+      &:hover, &:focus, &:active {
+        background-color: transparent !important;
+        border-color: $main-color !important;
+        color: $main-color !important;
+        box-shadow: none;
+        
+      }
+    }
+  
+    .nav-item {
+      color: $main-white-color;
+    }
+
+    .dropdown-menu{
+      .dropdown-item{
+        font-size: 14px;
+        &:active{
+          background-color: $main-color;
+        }
+      }
+    }
+  }
+  

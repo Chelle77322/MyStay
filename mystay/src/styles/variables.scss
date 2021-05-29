@@ -1,0 +1,186 @@
+$main-color: #e07116;
+$main-text-gray-color: #1e1e1f;
+$light-navy-color:#393958;
+$main-black-color: #22000a;
+$main-white-color: #eded99;
+$light-navy-color-2: #393455;
+@mixin auth-padding {
+    padding: 5rem 10rem;
+}
+@mixin section-padding{
+    padding: 9rem 5rem;
+}
+@mixin full-size{
+    width: 100vw;
+    min-height: 100vh;
+}
+@mixin flex-property-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  @mixin flex-property-column-top {
+    align-items: stretch;
+  }
+  
+  @mixin flex-property-row {
+    display: flex;
+    align-items: center;
+  }
+  
+  @mixin flex-property-row-center {
+    @include flex-property-row;
+    justify-content: center;
+  }
+  
+  @mixin flex-property-row-start {
+    @include flex-property-row;
+    justify-content: flex-start;
+  }
+  
+  @mixin flex-property-row-end {
+    @include flex-property-row;
+    justify-content: flex-end;
+  }
+  
+  @mixin flex-property-row-space-between {
+    @include flex-property-row;
+    justify-content: space-between;
+  }
+  
+  @mixin flex-property-row-space-evenly {
+    @include flex-property-row;
+    justify-content: space-evenly;
+  }
+  
+  @mixin grid {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-gap: 1rem;
+  }
+  @mixin five-col-grid {
+    @include grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+  
+  @mixin four-col-grid {
+    @include grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  @mixin three-col-grid {
+    @include grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  @mixin two-col-grid {
+    @include grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @mixin one-col-grid {
+    @include grid;
+    grid-template-columns: 1fr;
+  }
+  
+  @mixin thirty-seventy-grid {
+    @include grid;
+    grid-template-columns: 25% 75%;
+  }
+  
+  @mixin three-equal-perc-grid {
+    @include grid;
+    grid-template-columns: 33% 33% 33%;
+  }
+  
+  @mixin shadow-trans {
+    box-shadow: 0 12px 15px 0 rgba(51, 51, 51, 0.1);
+    transform: scale(1);
+    transition: transform 0.35s ease-in-out;
+  }
+  
+  @mixin two-px-border {
+    border: 2px solid rgba(116, 104, 104, 0.5);
+  }
+  
+  @mixin btn-hover-standard {
+    background-color: var(--primary-dark);
+    transform: scale(1.03);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  @mixin standard-button {
+    padding: 0.7rem;
+    background-color: var(--primary);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    margin: 1.5rem;
+    width: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    text-transform: uppercase;
+    box-shadow: 0 1rem 1rem rgba(rgb(136, 136, 153), 0.3);
+  
+    &:hover {
+      @include btn-hover-standard;
+    }
+    &:active {
+      outline: none;
+    }
+  }
+  
+  
+  @mixin standard-button-disabled {
+    padding: 0.7rem;
+    background-color: var(--primary-disabled);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    margin: 1.5rem;
+    width: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    text-transform: uppercase;
+    box-shadow: 0 1rem 1rem rgba(rgb(136, 136, 153), 0.3);
+  }
+  
+  @mixin small-button {
+    @include standard-button;
+    padding: 0.3rem;
+    width: 7.5rem;
+    border: 2px solid var(--primary);
+    @include shadow-trans;
+  
+    &:hover {
+      @include btn-hover-standard;
+    }
+  }
+  
+  @mixin circled-button {
+    background-color: var(--primary);
+    color: white;
+    padding: 0.3rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 1rem 1rem rgba(rgb(136, 136, 153), 0.3);
+  
+    &:hover {
+      @include btn-hover-standard;
+    }
+    &:active {
+      background-color: var(--primary-dark);
+      outline: none;
+    }
+  }
