@@ -54,7 +54,7 @@
     "start:dev": "concurrently \"nodemon --ignore 'mystay/*'\" \"npm run mystay\"",
     "mystay": "cd mystay && npm run start",
     "build": "cd mystay && npm run build",
-    "install-mystay": "cd src/mystay && npm install",
+    "install-mystay": "cd mystay && npm install",
     "heroku-postbuild": "npm run install-mystay && npm run build"
   },
   "main": "server/server.js",
