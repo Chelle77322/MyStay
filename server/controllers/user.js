@@ -18,7 +18,7 @@ exports.auth = function(request, result){
         }
         if(user.hasSamePassword(password)){
             const token = jwt.sign({
-                booking_id: booking.id,
+                booking_id: user.booking.id,
                 fullname: user.fullname
             }, config.SECRET, {expiresIn: '1hr'});
             return result.json(token);

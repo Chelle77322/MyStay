@@ -24,22 +24,20 @@
 
 ],
 "users": [{
-    "booking_id":"0022A78K",
-    "fullname": "Mary Smith",
-    "password":"abcd1234"    
+    "booking_id": "0022A78K",
+    "full_name": "Mary Smith",
+    "password": "abcd1234"    
     },
     {
-     "booking_id":"0034B78L",
-     "fullname": "John Adam",
+     "booking_id": "0034B78L",
+     "full_name": "John Adam",
      "password":"pine1234"    
      },
      {
-     "booking_id":"0044C78M",
-     "fullname": "Diane Asse",
-    "password":"1234kmqo"    
+     "booking_id": "0044C78M",
+     "full_name": " Diane Asse",
+    "password":" 1234kmqo"    
     }
-],
-"feedback":[{
-    
-}]
+]
+
 }

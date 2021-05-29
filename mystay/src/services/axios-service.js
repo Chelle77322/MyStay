@@ -1,5 +1,5 @@
 import axios from 'axios';
-import AuthService from './auth-service';
+import authService from './auth-service';
 
 class AxiosService {
     axiosInstance = {};
@@ -13,7 +13,7 @@ class AxiosService {
         });
         this.axiosInstance.interceptors.request.use(
             (config) => {
-                const token = AuthService.getToken();
+                const token = authService.getToken();
                 if(token){
                     config.headers.Authorization = `Bearer ${token}`;
                 }

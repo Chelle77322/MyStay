@@ -7,10 +7,7 @@ import {Redirect} from 'react-router-dom';
 export class Login extends React.Component{
     constructor(){
         super();
-        this.state = {
-        errors:[],
-        redirect: false
-        }
+      
         this.loginUser = this.loginUser.bind(this);
         console.log(this.loginUser);
         
@@ -43,7 +40,7 @@ export class Login extends React.Component{
                         <div className = "col-md-6 ml-auto">
                             <div className = "image-container">
                                 <h2 className = "catchphrase"> Select an area to give feedback</h2>
-                                
+                                <img src={process.env.PUBLIC_URL + '/img/RateMyStay.png'} alt="" />
                             </div>
                         </div>
                     </div>
@@ -60,4 +57,3 @@ function mapStatetoProps(state){
    
 }
 export default connect(mapStatetoProps)(Login);
-console.log(Login);

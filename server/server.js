@@ -18,7 +18,7 @@ mongoose.connect(MONGODB_URI , {
   }).then(()=>{
     if(process.env.NODE_ENV !== 'production'){
         const startDb = new StartDb();
-        //startDb.seedDb();
+        startDb.seedDb();
     }
 });
 const app = express();
@@ -42,9 +42,7 @@ app.use(express.json());
 app.use('/api/accommodation',accommodationRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/feedback', feedbackRoutes);
-console.log(userRoutes);
-console.log(feedbackRoutes);
-console.log(accommodationRoutes);
+
 
 if(process.env.NODE_ENV === "production"){
     const appPath = path.join(__dirname, '..',build);
@@ -52,7 +50,7 @@ if(process.env.NODE_ENV === "production"){
     app.get('*', function(request, result){
         result.sendFile(path.resolve(appPath, 'index.html'));
     });
-    console.log(appPath);
+
 }
 
 //App is connected and listening on

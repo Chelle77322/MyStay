@@ -20,7 +20,7 @@ const FormRegister = props => {
         className = "form-control"/>
 
         <Field
-        name = "fullname"
+        name = "full_name"
         type = "text"
         label = 'Name'
         className = 'form-control'
@@ -53,9 +53,9 @@ const validate = values => {
     if (values.booking_id && values.booking_id.length < 8) {
         errors.booking_id = 'Booking id is not minimum length of 8 characters!';
     }
-    if(!values.fullname){
-        errors.fullname = "Please enter your full name";
-        console.log(values.fullname);
+    if(!values.full_name){
+        errors.full_name = "Please enter your full name";
+        console.log(values.full_name);
     }
     if (!values.passwordConfirmation){
         errors.passwordConfirmation = "Please enter password to confirm match";

@@ -1,5 +1,5 @@
 import axios from 'axios'
-import AuthService from '../services/auth-service';
+import authService from '../services/auth-service';
 import axiosService from '../services/axios-service';
 import {
     LOGIN_SUCCESS,
@@ -17,10 +17,7 @@ import {
     FETCH_USERFEEDBACK_INIT,
     FETCH_USERFEEDBACK_SUCCESS
    } from './types'
-console.log(axios);
-console.log(AuthService);
-console.log(axiosService);
-console.log(LOGIN_SUCCESS);
+
 //Accommodation Actions
 const axiosInstance = axiosService.getInstance();
 
@@ -138,8 +135,7 @@ export const Register = (userData) => {
     })
 }
 const loginSuccess = () => {
-    const booking_id = AuthService.getBooking_ID();
-    console.log(booking_id);
+    const booking_id = authService.getBooking_ID();
     return {
         type: LOGIN_SUCCESS,booking_id
         
@@ -154,7 +150,7 @@ const loginFail = (errors) => {
 }
 export const checkAuthState = () => {
     return dispatch => {
-        if(AuthService.isAuthenticated()){
+        if(authService.isAuthenticated()){
             dispatch(loginSuccess());
         }
     }
@@ -162,7 +158,7 @@ export const checkAuthState = () => {
 export const loginUser = (userData) => {
     return dispatch => {
         return axios.post('/api/users/auth',userData).then (token => {
-            AuthService.saveToken(token);
+            authService.saveToken(token);
             dispatch(loginSuccess());
         }).catch(({response})=>{
             dispatch(loginFail(response.data.errors));
@@ -170,8 +166,8 @@ export const loginUser = (userData) => {
     }
 }
 export const logout = () => {
-    AuthService.inValidateUser();
-    console.log(AuthService.inValidateUser());
+    authService.inValidateUser();
+    console.log(authService.inValidateUser());
     return {
         type: LOGOUT
     }

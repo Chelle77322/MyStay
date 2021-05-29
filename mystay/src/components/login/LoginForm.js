@@ -1,5 +1,4 @@
 import React from 'react';
-import {connect} from 'react-redux';
 import {Field, reduxForm} from 'redux-form';
 import{RMSInput} from '../shared/form/RMSInput';
 import{RMSResError} from '../shared/form/RMSResError';
@@ -30,6 +29,6 @@ const LoginForm = props => {
         </form>
     )
 }
-export default connect() (reduxForm ({
+export default reduxForm ({
     form: 'LoginForm'
-})(LoginForm));
+})(LoginForm);

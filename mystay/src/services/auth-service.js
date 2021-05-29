@@ -10,8 +10,8 @@ class AuthService {
         return jwt.decode(token);
     }
     getExpiration(token) {
-        const expire = this.decode(token).expire;
-        return moment.unix(expire);
+        const exp = this.decode(token).exp;
+        return moment.unix(exp);
     }
     saveToken(token){
         localStorage.setItem(this.tokenKey, token);

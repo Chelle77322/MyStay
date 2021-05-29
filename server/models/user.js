@@ -8,7 +8,7 @@ const userSchema = new Schema ({
         min: [8, 'Too short! minimum is 8 characters'],
         max: [12, 'Too long the maximum is 12 characters']
     },
-    fullname: {
+    full_name: {
         type: String,
         min: [12,'Too short minimum characters for full name is 12 characters'],
         lowercase: true,
@@ -20,8 +20,8 @@ const userSchema = new Schema ({
         max: [20, 'Too long!, maximum password length is 20 characters'],
         required: 'A password is required'
     },
-    accommodation: [{type: Schema.Types.ObjectId, reference: 'Accommodation' }],
-    feedback: [{type: Schema.Types.ObjectId, reference: 'Feedback'}]
+    //accommodation: [{type: Schema.Types.ObjectId, reference: 'Accommodation' }],
+    //feedback: [{type: Schema.Types.ObjectId, reference: 'Feedback'}]
 });
 
 userSchema.methods.hasSamePassword = function (requestedPassword){
