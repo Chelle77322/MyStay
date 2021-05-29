@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import {BrowserRouter, Route, Redirect, Switch} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import Header from './components/shared/Header';
-import {Login} from './components/login/Login';
-import {Register} from './components/register/Register';
+import Login from './components/login/Login';
+import Register from './components/register/Register';
 import * as actions from './actions';
 
 import {ProtectedRoute} from './components/shared/auth/protected';

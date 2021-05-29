@@ -5,7 +5,7 @@ export const RMSInput = ({
     type,
     symbol,
     className,
-    meta: {touched, error, warning }
+    meta: {touched, error}
 }) => (
     <div className='form-group'>
             <label>{label}</label>
@@ -20,9 +20,6 @@ export const RMSInput = ({
             </div>
             {touched &&
                 ((error && <div className='alert alert-danger'>{error}</div>))}
-
-{touched &&
-                ((warning && <div className='alert alert-warning'>{warning}</div>))}
 
         </div>
     )
