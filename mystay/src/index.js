@@ -14,7 +14,7 @@ import reportWebVitals from './reportWebVitals';
 
 import app from 'express';
 import config from './webpack.config';
-import compiler from './build/webpack(config)';
+compiler = webpack(config);
 
 app.use(webpackDevMiddleware(compiler, {
   noInfo: true,

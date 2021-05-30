@@ -29,7 +29,9 @@
     "bootstrap": "^5.0.1",
     "camel-case": "^4.1.2",
     "chokidar": "^3.5.1",
+    "classlist.js": "^1.1.20150312",
     "concurrently": "^6.2.0",
+    "config-webpack": "^1.0.5",
     "cors": "^2.8.5",
     "create-react-app": "^4.0.3",
     "dotenv": "^10.0.0",
@@ -56,6 +58,7 @@
     "run-all": "^1.0.1",
     "server": "^1.0.33",
     "underscore": "^1.13.1",
+    "webpack": "^4.44.2",
     "webpack-dev-middleware": "^3.7.3",
     "webpack-hot-middleware": "^2.25.0"
   },
