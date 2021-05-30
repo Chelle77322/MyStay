@@ -2,11 +2,11 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import logoutAndRedirect from '../actions/loginAuth';
+import {logoutAndRedirect} from '../actions/loginAuth';
 
 import './../styles/main.scss';
 
-connect = ((state)=> {
+connect= ((state)=> {
     return {
         isAuthenticated: state.auth.isAuthenticated
     };

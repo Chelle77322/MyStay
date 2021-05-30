@@ -1,10 +1,5 @@
 import { checkHttpStatus, parseJSON} from '../utils';
-import LOGIN_FAIL from './../constants/index';
-import REGISTER from './../constants/index';
-import LOGIN_SUCCESS from './../constants/index';
-import LOGOUT from './../constants.index';
-import FETCH_PROTECTED_DATA_REQUEST from './../constants/index';
-import RECEIVE_PROTECTED_DATA from './../constants/index';
+import {LOGIN_FAIL,LOGIN_SUCCESS, LOGOUT, REGISTER,FETCH_PROTECTED_DATA_REQUEST, RECEIVE_PROTECTED_DATA} from '../constants';
 import {pushState} from 'redux-router';
 import jwtDecode from 'jwt-decode';
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import {Provider} from 'react-redux';
-import  Route from '../routes';
+import { Route} from '../routes';
 //import routes from '../routes';
-import ReduxRouter from 'redux-router';
+import {ReduxRouter} from 'redux-router';
 
 export default class Root extends React.Component {
     static propTypes = {
