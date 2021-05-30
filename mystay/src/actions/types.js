@@ -17,6 +17,6 @@ export const FETCH_FEEDBACK_SUCCESS = 'FETCH_FEEDBACK_SUCCESS';
 export const FETCH_FEEDBACK_INIT = 'FETCH_FEEDBACK_INIT';
 
 
-export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
-export const LOGIN_FAIL = 'LOGIN_FAIL';
-export const LOGOUT = 'LOGOUT';
+//export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+//export const LOGIN_FAIL = 'LOGIN_FAIL';
+//export const LOGOUT = 'LOGOUT';

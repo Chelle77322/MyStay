@@ -1,10 +1,10 @@
 import axios from 'axios'
-import authService from '../services/auth-service';
+//import authService from '../services/auth-service';
 import axiosService from '../services/axios-service';
 import {
-    LOGIN_SUCCESS,
-    LOGIN_FAIL,
-    LOGOUT,
+    //LOGIN_SUCCESS,
+    //LOGIN_FAIL,
+    //LOGOUT,
     FETCH_ACCOMMODATION_BY_ID_SUCCESS,
     FETCH_ACCOMMODATION_BY_ID_INIT,
     FETCH_ACCOMMODATION_INIT,
@@ -127,51 +127,51 @@ export const fetchUserFeedback = () => {
     }
 }
 //AUTHORIZATION ACTIONS HERE (LOGIN)
-export const Register = (userData) => {
-    return axios.post('api/users/register', {...userData}).then ((result)=> {
-        return result.data;
-    }, (error)=>{
-        return Promise.reject(error.response.data.errors);
-    })
-}
-const loginSuccess = () => {
-    const booking_id = authService.getBooking_ID();
-    return {
-        type: LOGIN_SUCCESS,booking_id
+//export const Register = (userData) => {
+  //  return axios.post('api/users/register', {...userData}).then ((result)=> {
+    //    return result.data;
+    //}, (error)=>{
+      //  return Promise.reject(error.response.data.errors);
+    //})
+//}
+//const loginSuccess = () => {
+  //  const booking_id = authService.getBooking_ID();
+    //return {
+      //  type: LOGIN_SUCCESS,booking_id
         
-    }
-}
-const loginFail = (errors) => {
+   // }
+//}
+//const loginFail = (errors) => {
    
-    return {
-        type: LOGIN_FAIL, errors
+ //   return {
+   //     type: LOGIN_FAIL, errors
         
-    }
-}
-export const checkAuthState = () => {
-    return dispatch => {
-        if(authService.isAuthenticated()){
-            dispatch(loginSuccess());
-        }
-    }
-}
-export const loginUser = (userData) => {
-    return dispatch => {
-        return axios.post('/api/users/auth',userData).then (token => {
-            authService.saveToken(token);
-            dispatch(loginSuccess());
-        }).catch(({response})=>{
-            dispatch(loginFail(response.data.errors));
-        })
-    }
-}
-export const logout = () => {
-    authService.inValidateUser();
-    console.log(authService.inValidateUser());
-    return {
-        type: LOGOUT
-    }
-}
+   // }
+//}
+//export const checkAuthState = () => {
+  //  return dispatch => {
+    //    if(authService.isAuthenticated()){
+      //      dispatch(loginSuccess());
+       // }
+   // }
+//}
+//export const loginUser = (userData) => {
+  //  return dispatch => {
+    //    return axios.post('/api/users/auth',userData).then (token => {
+      //      authService.saveToken(token);
+        //    dispatch(loginSuccess());
+        //}).catch(({response})=>{
+          //  dispatch(loginFail(response.data.errors));
+        //})
+    //}
+//}
+//export const logout = () => {
+  //  authService.inValidateUser();
+    //console.log(authService.inValidateUser());
+    //return {
+      //  type: LOGOUT
+    //}
+//}
 export const createUserFeedback = (feedback) => {
     return axiosInstance.post('/feedback', feedback).then(result => result.data).catch(({response})=> Promise.reject(response.data.errors));
 }
