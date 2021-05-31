@@ -1,6 +1,9 @@
 {
-   
-    "parser": "espree",
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "parser": "babel-eslint",
     "ecmaFeatures": {},
     "rules": {
         "no-alert": 0,

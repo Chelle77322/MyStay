@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import path from 'path';
 import argv from 'yargs';
 import dotenv from 'dotenv';
@@ -56,6 +57,6 @@ config.set('utils_aliases', [
     'reducers',
     'routes',
     'services',
-    'utils',
+    'utils'
 ].reduce((acc,dir)=> ((acc[dir]= paths.build(dir))&& acc), {}));
 export default config

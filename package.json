@@ -8,6 +8,11 @@
       "target": "http://localhost:3000/"
     }
   },
+    "jest": {
+    "transform": {
+      "^.+\\.js$": "<rootDir>/.jest.transform.js"
+    }
+  },
   "peerDependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -97,6 +102,12 @@
     "build": "cd mystay && npm run build",
     "install-mystay": "cd mystay && npm install",
     "heroku-postbuild": "npm run install-mystay && npm run build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "main": "server/server.js",
   "repository": {
