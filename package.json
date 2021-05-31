@@ -3,12 +3,8 @@
   "version": "1.0.0",
   "description": "A MERN app that allows guests to give feedback about the accommodation and facilities",
   "private": true,
-  "proxy": {
-    "api/*": {
-      "target": "http://localhost:3000/"
-    }
-  },
-    "jest": {
+  "proxy":"http://localhost:4045/",
+  "jest": {
     "transform": {
       "^.+\\.js$": "<rootDir>/.jest.transform.js"
     }
@@ -90,6 +86,7 @@
     "server": "^1.0.33",
     "underscore": "^1.13.1",
     "webpack": "^4.44.2",
+    "webpack-cli": "^4.7.0",
     "webpack-dev-middleware": "^3.7.3",
     "webpack-dev-server": "^3.11.1",
     "webpack-hot-middleware": "^2.25.0"

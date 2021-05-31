@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react'
 import Modal from 'react-responsive-modal';
 import {RMSResError} from '../../components/shared/form/RMSResError';
