@@ -1,5 +1,5 @@
 {
-    "import":"import",
+   
     "parser": "espree",
     "ecmaFeatures": {},
     "rules": {

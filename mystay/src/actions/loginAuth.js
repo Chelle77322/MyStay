@@ -34,7 +34,7 @@ export function logout() {
     }
 }
 
-export function logoutRedirect(){
+export function logoutAndRedirect(){
     return (dispatch, state) => {
         dispatch(pushState(null, '/login'));
     }

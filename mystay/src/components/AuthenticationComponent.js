@@ -1,8 +1,9 @@
+'use strict';
 import React from 'react';
 import {connect} from 'react-redux';
 import {pushState} from 'redux-router';
 
-export function requireAuthentication(Component){
+export default function requireAuthentication(Component){
     class AuthenticatedComponent extends React.Component {
         componentDidMount (){
             this.checkAuth(this.props.isAuthenticated);

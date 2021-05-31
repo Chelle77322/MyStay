@@ -1,5 +1,5 @@
 import path from 'path';
-import {argv} from 'yargs';
+import argv from 'yargs';
 import dotenv from 'dotenv';
 
 
