@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import axios from 'axios'
 //import authService from '../services/auth-service';
 import axiosService from '../services/axios-service';
@@ -22,11 +23,6 @@ import {
 const axiosInstance = axiosService.getInstance();
 
 
-const fetchAccommodationByIdInit = () => {
-    return {
-        type: FETCH_ACCOMMODATION_BY_ID_INIT
-    }
-}
 const fetchAccommodationByIdSuccess = (accommodation) => {
     return {
         type: FETCH_ACCOMMODATION_BY_ID_SUCCESS, accommodation

@@ -1,11 +1,13 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
+//import {bindActionCreators} from 'redux';
 import {logoutAndRedirect} from '../actions/loginAuth';
 
 import './../styles/main.scss';
 
+// eslint-disable-next-line no-unused-vars
 connect= ((state)=> {
     return {
         isAuthenticated: state.auth.isAuthenticated

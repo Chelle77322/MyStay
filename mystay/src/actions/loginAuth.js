@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { checkHttpStatus, parseJSON} from '../utils';
 import {LOGIN_FAIL,LOGIN_SUCCESS, LOGOUT, REGISTER,FETCH_PROTECTED_DATA_REQUEST, RECEIVE_PROTECTED_DATA} from '../constants';
 import {pushState} from 'redux-router';

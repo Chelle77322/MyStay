@@ -7,6 +7,7 @@ import {ProtectedRoute} from './components/shared/auth/protected';
 import {LoggedInRoute} from './components/shared/auth/loginroute';
 
 import FeedbackForm from './components/feedback/feedbackForm';
+import "bootstrap/dist/css/bootstrap.min.css";
 import './App.scss';
 const store = require('./reducers').init();
 

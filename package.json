@@ -104,6 +104,12 @@
     "install": "cd mystay && npm install",
     "heroku-postbuild": "npm run install-mystay && npm run build"
   },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
   "main": "server/server.js",
   "repository": {
     "type": "git",
